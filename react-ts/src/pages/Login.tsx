@@ -4,11 +4,19 @@ import AuthCard from "../components/AuthCard";
 import BgImage from "../assets/Login_Background.png";
 
 export default function Login() {
-  const { register, handleSubmit } = useForm();
+ const { register, handleSubmit } = useForm<LoginFormData>();
 
-  function onSubmit(data: any) {
-    console.log("LOGIN:", data);
-  }
+
+  type LoginFormData = {
+  email: string;
+  password: string;
+};
+
+
+function onSubmit(data: LoginFormData) {
+  console.log("LOGIN:", data);
+}
+
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
