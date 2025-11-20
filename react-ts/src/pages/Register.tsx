@@ -1,5 +1,4 @@
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
 import AuthCard from "../components/AuthCard";
 import BgImage from "../assets/Login_Background.png";
 
@@ -9,12 +8,15 @@ type RegisterFormData = {
   password: string;
 };
 
-export default function Register() {
+type RegisterProps = {
+  onChange: () => void;
+};
+
+export default function Register({ onChange }: RegisterProps) {
   const { register, handleSubmit } = useForm<RegisterFormData>();
 
   function onSubmit(data: RegisterFormData) {
     console.log("REGISTER:", data);
-
   }
 
   return (
@@ -72,12 +74,13 @@ export default function Register() {
 
             <div className="text-center pt-4 border-t">
               <p className="text-sm text-gray-600">Já tem uma conta?</p>
-              <Link
+              <button
+                type="button"
+                onClick={onChange}
                 className="w-full block mt-2 py-2 rounded-lg border bg-gray-200"
-                to="/"
               >
                 Acessar conta
-              </Link>
+              </button>
             </div>
           </form>
         </AuthCard>

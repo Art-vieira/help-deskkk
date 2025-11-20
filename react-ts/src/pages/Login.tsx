@@ -1,8 +1,6 @@
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
 import AuthCard from "../components/AuthCard";
 import BgImage from "../assets/Login_Background.png";
-
 
 type LoginFormData = {
   email: string;
@@ -10,7 +8,11 @@ type LoginFormData = {
 };
 
 
-export default function Login() {
+type LoginProps = {
+  onChange: () => void;
+};
+
+export default function Login({ onChange }: LoginProps) {
   const { register, handleSubmit } = useForm<LoginFormData>();
 
   function onSubmit(data: LoginFormData) {
@@ -62,12 +64,13 @@ export default function Login() {
 
             <div className="text-center pt-4 border-t">
               <p className="text-sm text-gray-600">Ainda não tem uma conta?</p>
-              <Link
+              <button
+                type="button"
+                onClick={onChange}
                 className="w-full block mt-2 py-2 rounded-lg border bg-gray-200"
-                to="/register"
               >
                 Criar conta
-              </Link>
+              </button>
             </div>
           </form>
         </AuthCard>
