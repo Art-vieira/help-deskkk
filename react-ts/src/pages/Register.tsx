@@ -3,25 +3,36 @@ import { Link } from "react-router-dom";
 import AuthCard from "../components/AuthCard";
 import BgImage from "../assets/Login_Background.png";
 
-export default function Register() {
-  const { register, handleSubmit } = useForm();
+type RegisterFormData = {
+  name: string;
+  email: string;
+  password: string;
+};
 
-  function onSubmit(data: any) {
+export default function Register() {
+  const { register, handleSubmit } = useForm<RegisterFormData>();
+
+  function onSubmit(data: RegisterFormData) {
     console.log("REGISTER:", data);
+
   }
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      
       <div className="hidden md:flex w-1/2">
-        <img src={BgImage} alt="background" className="w-full h-full object-cover rounded-l-2xl" />
+        <img
+          src={BgImage}
+          alt="background"
+          className="w-full h-full object-cover rounded-l-2xl"
+        />
       </div>
 
       <div className="flex w-full md:w-1/2 items-center justify-center p-6">
-        <AuthCard title="Crie sua conta" subtitle="Informe seus dados para criar seu acesso.">
-          
+        <AuthCard
+          title="Crie sua conta"
+          subtitle="Informe seus dados para criar seu acesso."
+        >
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
-            
             <div>
               <label className="block text-sm font-medium">Nome</label>
               <input
@@ -68,12 +79,9 @@ export default function Register() {
                 Acessar conta
               </Link>
             </div>
-
           </form>
-
         </AuthCard>
       </div>
-      
     </div>
   );
 }

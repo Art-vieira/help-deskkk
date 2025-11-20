@@ -3,33 +3,36 @@ import { Link } from "react-router-dom";
 import AuthCard from "../components/AuthCard";
 import BgImage from "../assets/Login_Background.png";
 
-export default function Login() {
- const { register, handleSubmit } = useForm<LoginFormData>();
 
-
-  type LoginFormData = {
+type LoginFormData = {
   email: string;
   password: string;
 };
 
 
-function onSubmit(data: LoginFormData) {
-  console.log("LOGIN:", data);
-}
+export default function Login() {
+  const { register, handleSubmit } = useForm<LoginFormData>();
 
+  function onSubmit(data: LoginFormData) {
+    console.log("LOGIN:", data);
+  }
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      
       <div className="hidden md:flex w-1/2">
-        <img src={BgImage} alt="background" className="w-full h-full object-cover rounded-l-2xl" />
+        <img
+          src={BgImage}
+          alt="background"
+          className="w-full h-full object-cover rounded-l-2xl"
+        />
       </div>
 
       <div className="flex w-full md:w-1/2 items-center justify-center p-6">
-        <AuthCard title="Acesse o portal" subtitle="Entre usando seu e-mail e senha cadastrados.">
-          
+        <AuthCard
+          title="Acesse o portal"
+          subtitle="Entre usando seu e-mail e senha cadastrados."
+        >
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
-            
             <div>
               <label className="block text-sm font-medium">E-mail</label>
               <input
@@ -66,12 +69,9 @@ function onSubmit(data: LoginFormData) {
                 Criar conta
               </Link>
             </div>
-
           </form>
-
         </AuthCard>
       </div>
-      
     </div>
   );
 }
