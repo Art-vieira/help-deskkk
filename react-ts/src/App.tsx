@@ -1,29 +1,23 @@
-// Updated App.tsx for Login and Register screens
-import './App.css';
-import bg from './assets/Background.png';
-import Login from './pages/Login';
-import Register from './pages/Register';
-import { useState } from 'react';
+import "./App.css";
+import bg from "./assets/Background.png";
+import { Login } from "./pages/Login";
+// import { AuthCard } from "./components/AuthCard";
 
-export default function App() {
-  const [screen, setScreen] = useState<'login' | 'register'>('login');
-
+export const App = () => {
   return (
-  <>
-    {/* BACKGROUND fixo e sempre atrás */}
     <div
-      className="fixed inset-0 bg-cover bg-center bg-no-repeat bg-fixed"
+      className="flex h-screen w-full bg-cover bg-center"
       style={{ backgroundImage: `url(${bg})` }}
-    />
+    >
+      <div className="hidden md:block md:w-1/2 h-full relative">
+        <div className="absolute inset-0"></div>
+      </div>
 
-    {/* Conteúdo normal do app (Login, Register, etc) */}
-    <div className="relative z-10 min-h-screen">
-      {screen === "login" ? (
-        <Login onChange={() => setScreen('register')} />
-      ) : (
-        <Register onChange={() => setScreen('login')} />
-      )}
+      <div className="w-full md:w-1/2 flex flex-col justify-end">
+        <div>
+          <Login />
+        </div>
+      </div>
     </div>
-  </>
-);
-}
+  );
+};
