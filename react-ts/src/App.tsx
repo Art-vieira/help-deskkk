@@ -1,22 +1,16 @@
 import "./App.css";
-import bg from "./assets/Background.png";
+import bg from "./assets/Background.png"; // ou use o caminho público
+
 import { Login } from "./pages/Login";
-// import { AuthCard } from "./components/AuthCard";
 
 export const App = () => {
   return (
     <div
-      className="flex h-screen w-full bg-cover bg-center"
+      className="min-h-screen w-full bg-cover bg-center flex justify-center items-center"
       style={{ backgroundImage: `url(${bg})` }}
     >
-      <div className="hidden md:block md:w-1/2 h-full relative">
-        <div className="absolute inset-0"></div>
-      </div>
-
-      <div className="w-full md:w-1/2 flex flex-col justify-end">
-        <div>
-          <Login />
-        </div>
+      <div className="w-full max-w-md bg-white rounded-xl shadow-2xl p-8">
+        <Login />
       </div>
     </div>
   );
