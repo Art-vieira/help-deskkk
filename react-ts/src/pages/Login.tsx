@@ -20,21 +20,25 @@ export default function Login({ onChange }: LoginProps) {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="hidden md:flex w-1/2">
+    <div className="h-screen flex overflow-hidden z-10">
+
+      {/* Esquerda com a imagem (grudado na esquerda, sem bordas) */}
+      <div className="hidden md:flex w-1/2 h-full">
         <img
           src={BgImage}
           alt="background"
-          className="w-full h-full object-cover rounded-l-2xl"
+          className="w-full h-full object-cover"
         />
       </div>
 
-      <div className="flex w-full md:w-1/2 items-center justify-center p-6">
+      {/* Direita: painel branco ocupando 50% */}
+      <div className="w-full md:w-1/2 h-full bg-white flex items-center justify-center p-8 shadow-2xl">
         <AuthCard
           title="Acesse o portal"
           subtitle="Entre usando seu e-mail e senha cadastrados."
         >
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+
             <div>
               <label className="block text-sm font-medium">E-mail</label>
               <input
@@ -67,11 +71,12 @@ export default function Login({ onChange }: LoginProps) {
               <button
                 type="button"
                 onClick={onChange}
-                className="w-full block mt-2 py-2 rounded-lg border bg-gray-200"
+                className="w-full mt-2 py-2 rounded-lg border bg-gray-200"
               >
                 Criar conta
               </button>
             </div>
+
           </form>
         </AuthCard>
       </div>

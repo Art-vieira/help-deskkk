@@ -9,15 +9,21 @@ export default function App() {
   const [screen, setScreen] = useState<'login' | 'register'>('login');
 
   return (
+  <>
+    {/* BACKGROUND fixo e sempre atrás */}
     <div
-        className="app-container bg-cover bg-center min-h-screen"
-        style={{ backgroundImage: `url(${bg})` }}
-      >
-      {screen === 'login' ? (
+      className="fixed inset-0 bg-cover bg-center bg-no-repeat bg-fixed"
+      style={{ backgroundImage: `url(${bg})` }}
+    />
+
+    {/* Conteúdo normal do app (Login, Register, etc) */}
+    <div className="relative z-10 min-h-screen">
+      {screen === "login" ? (
         <Login onChange={() => setScreen('register')} />
       ) : (
         <Register onChange={() => setScreen('login')} />
       )}
     </div>
-  );
+  </>
+);
 }
