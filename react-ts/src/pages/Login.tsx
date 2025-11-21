@@ -1,6 +1,6 @@
 import { useForm } from "react-hook-form";
 import AuthCard from "../components/AuthCard";
-import BgImage from "../assets/Login_Background.png";
+import BgImage from "../assets/Background.png";
 
 type LoginFormData = {
   email: string;

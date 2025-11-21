@@ -1,6 +1,6 @@
 // Updated App.tsx for Login and Register screens
 import './App.css';
-import bg from './assets/Login_Background.png';
+import bg from './assets/Background.png';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import { useState } from 'react';
