@@ -1,12 +1,38 @@
 /* Corrigido – root ocupa a tela inteira */
-#root {
-  width: 100%;
+/* App.css */
+.app-root {
   min-height: 100vh;
-  margin: 0;
-  padding: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-repeat: no-repeat;
+  background-size: cover;      
+  background-position: center; 
 }
 
-/* Vite default code pode ser removido depois */
+.app-layout {
+  min-height: 100vh;
+  display: flex;
+}
+
+.app-left {
+  flex: 1;                      /* ocupa metade (ou mais) */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.app-right {
+  flex: 1;                      /* outra metade */
+  background-color: #f9fafb;    /* brancozinho */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
 .logo {
   height: 6em;
   padding: 1.5em;
