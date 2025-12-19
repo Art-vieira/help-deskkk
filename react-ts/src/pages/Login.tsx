@@ -23,8 +23,7 @@ export function Login() {
     <div 
       style={{ 
         width: '100%', 
-        height: '100vh', 
-        position: 'relative', 
+        height: '100vh',  
         backgroundColor: '#151619', 
         overflow: 'hidden' 
       }}
@@ -45,10 +44,10 @@ export function Login() {
       
 
       <div 
-        className="w-full md:w-[680px]"
+        className="w-full md:w-[680px] px-6 md:px-[140px]"
         style={{
             position: 'absolute',
-            top: '16px',
+            top: '0',
             bottom: '0',
             right: 0,
             backgroundColor: '#F9FAFA',
@@ -60,18 +59,15 @@ export function Login() {
             alignItems: 'center',
             justifyContent: 'center',
             overflowY: 'hidden',
-            paddingTop: '24px',
-            paddingBottom: '24px',
-            paddingLeft: '140px',
-            paddingRight: '140px',
+            justifyContent: 'center',
+            overflowY: 'hidden',
         }}
       >
         
         <div className="w-full flex flex-col gap-3 justify-start items-start">
 
             <div className="flex items-center gap-3">
-                <img src={LogoIdentifier} alt="HelpDesk Logo" className="w-10 h-10 object-contain" />
-                <h1 className="text-[#2E3DA3] text-2xl font-bold font-['Lato'] leading-[33.60px]"></h1>
+                <img src={LogoIdentifier} alt="HelpDesk Logo" className="w-30 h-30 object-contain" />
             </div>
 
 
