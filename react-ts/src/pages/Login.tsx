@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import BackgroundImage from "../assets/Background.png";
 import LogoIdentifier from "../assets/logo.png";
@@ -8,6 +9,7 @@ type LoginFormData = {
 };
 
 export function Login() {
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
@@ -59,8 +61,8 @@ export function Login() {
             alignItems: 'center',
             justifyContent: 'center',
             overflowY: 'hidden',
-            justifyContent: 'center',
-            overflowY: 'hidden',
+            // justifyContent: 'center', // Removido redundante
+            // overflowY: 'hidden', // Removido redundante
         }}
       >
         
@@ -135,7 +137,11 @@ export function Login() {
                         <div style={{ alignSelf: 'stretch', justifyContent: 'center', display: 'flex', flexDirection: 'column', color: '#1E2024', fontSize: '16px', fontFamily: 'Lato', fontWeight: '700', lineHeight: '22.40px', wordWrap: 'break-word' }}>Ainda não tem uma conta?</div>
                         <div style={{ alignSelf: 'stretch', justifyContent: 'center', display: 'flex', flexDirection: 'column', color: '#535964', fontSize: '12px', fontFamily: 'Lato', fontWeight: '400', lineHeight: '16.80px', wordWrap: 'break-word' }}>Cadastre agora mesmo</div>
                     </div>
-                    <button type="button" style={{ alignSelf: 'stretch', height: '40px', paddingLeft: '16px', paddingRight: '16px', background: '#E3E5E8', overflow: 'hidden', borderRadius: '5px', justifyContent: 'center', alignItems: 'center', gap: '8px', display: 'inline-flex', cursor: 'pointer', border: 'none' }}>
+                    <button 
+                        type="button" 
+                        onClick={() => navigate("/register")}
+                        style={{ alignSelf: 'stretch', height: '40px', paddingLeft: '16px', paddingRight: '16px', background: '#E3E5E8', overflow: 'hidden', borderRadius: '5px', justifyContent: 'center', alignItems: 'center', gap: '8px', display: 'inline-flex', cursor: 'pointer', border: 'none' }}
+                    >
                         <div style={{ justifyContent: 'center', display: 'flex', flexDirection: 'column', color: '#1E2024', fontSize: '14px', fontFamily: 'Lato', fontWeight: '700', lineHeight: '19.60px', wordWrap: 'break-word' }}>Criar conta</div>
                     </button>
                 </div>

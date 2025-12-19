@@ -1,5 +1,3 @@
-/* Corrigido – root ocupa a tela inteira */
-/* App.css */
 .app-root {
   min-height: 100vh;
   width: 100%;
@@ -8,8 +6,8 @@
   justify-content: center;
 
   background-repeat: no-repeat;
-  background-size: cover;      
-  background-position: center; 
+  background-size: cover;
+  background-position: center;
 }
 
 .app-layout {
@@ -18,16 +16,15 @@
 }
 
 .app-left {
-  flex: 1;                      /* ocupa metade (ou mais) */
+  flex: 1;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 }
 
 .app-right {
-  flex: 1;                      /* outra metade */
-  background-color: #f9fafb;    /* brancozinho */
-  display: flex;
+  flex: 1;
+  background-color: #f9fafb;
   align-items: center;
   justify-content: center;
 }
